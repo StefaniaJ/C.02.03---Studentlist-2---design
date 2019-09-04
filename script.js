@@ -58,3 +58,14 @@ function showDetails(students) {
     "House: " + students.house;
   modal.classList.remove("hide");
 }
+//Create a function for filter
+
+//Change the filter option
+
+//Call function showData to desplay the students
+
+//Create a function for sort
+
+//Change the sort option
+
+//Call function showData to desplay the students
