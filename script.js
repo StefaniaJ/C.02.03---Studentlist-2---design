@@ -1,46 +1,60 @@
-//Declare all the variables
+"use strict";
+
+//select DOM elements
 const template = document.querySelector("#templatestudents");
 const main = document.querySelector("#mainslisttudents");
-let mylink = "http://petlatkea.dk/2019/students1991.json";
+const myLink = "http://petlatkea.dk/2019/students1991.json";
+const modal = document.querySelector(".modal-bg");
+const article = document.querySelector(".modal-content");
+const close = document.querySelector(".close");
 
-document.addEventListener("DOMContentLoaded", start);
-//Add the template, main, link, modal..
+//Add global eventListeners
+close.addEventListener("click", () => modal.classList.add("hide"));
 
-//Call function start
-function start() {
-  console.log("Run function start");
-}
+//Fetch json data
+fetch(myLink)
+  .then(e => e.json())
+  .then(data => data.forEach(showData));
 
-//Create a varible for first name -split the fullname
-//Create a variable for last name - split the fullname
-const fullName = "???";
-const firstName = fullName.split(" ");
-console.log("First name: " + firstName[0]);
-const lastName = fullName.split(" ");
-console.log("Last name: " + lastName[1]);
+//Function showData
+function showData(students) {
+  //Select the content from template using a clone
+  let clone = template.cloneNode(true).content;
 
-//Load the data from JSON
-function loadData(link) {
-  fetch(link)
-    .then(e => e.json())
-    .then(data => shadow(data));
-}
+  //Create a varible for first name -split the fullname
+  //Create a variable for last name - split the fullname
+  let fullName = students.fullname;
+  let firstName = fullName.split(" ");
+  let lastName = fullName.split(" ");
 
-// Display the student list using a "show" function
-function shadow(data) {
-  data.forEach(student => {
-    //Select the content from template using a clone
-    let clone = template.cloneNode(true).content;
-    //Change the content from template
-    clone.querySelector(".studentname").textContent =
-      "Name: " + student.fullname;
-    clone.querySelector(".studenthome").textContent = "House: " + student.house;
-    //Apend the clone to the main
-    main.appendChild(clone);
-    console.log(student);
+  //Change the content from template
+  clone.querySelector(".firstname").textContent = "First name: " + firstName[0];
+  clone.querySelector(".lastname").textContent = "Last name: " + lastName[1];
+  //   clone.querySelector(".fullname").textContent =
+  //     "First name: " + firstName[0] + " Last name: " + lastName[1];
+  clone.querySelector(".studenthome").textContent = "House: " + students.house;
+  //   clone.querySelector("button").addEventListener("click", () => {
+  //     fetch(myLink)
+  //       .then(e => e.json())
+  //       .then(data => showDetails(data));
+  //   });
+
+  clone.querySelectorAll("button").forEach(students => {
+    students.addEventListener("click", showDetails);
   });
-}
-//Load the data
-loadData(mylink);
 
-//create a filter for first name, last name, house
+  // if (filter == students.house || filter == "All houses") {
+  //   clone.querySelector;
+  // }
+
+  //Apend the clone to the main
+  main.appendChild(clone);
+}
+//MODAL
+function showDetails(students) {
+  console.log(students);
+  modal.querySelector(".name-modal").textContent = "Name :" + students.fullname;
+  modal.querySelector(".details-modal").textContent =
+    "House: " + students.house;
+  modal.classList.remove("hide");
+}
