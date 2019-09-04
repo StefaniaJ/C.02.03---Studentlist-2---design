@@ -1,14 +1,22 @@
 /* /////// Overall layout /////// */
 * {
   box-sizing: border-box;
-  margin: 0;
-  padding: 0;
 }
 
 body,
 html {
-  height: 100%;
   font-family: Helvetica, sans-serif;
+}
+header {
+  background-color: black;
+  opacity: 0.9;
+  width: 100%;
+  height: 80px;
+}
+#logo {
+  width: 8%;
+  margin-top: 10px;
+  margin-left: 10px;
 }
 
 body {
@@ -16,17 +24,31 @@ body {
   margin: auto;
   color: #29484b;
   font-family: sans-serif;
-  background-color: white;
+  background-color: #9839c9;
 }
 
+/* TEXT */
 #title {
   text-align: center;
   padding: 10px;
+  color: aliceblue;
+  font-size: 30px;
+  font-family: "Pathway Gothic One", sans-serif;
+}
+/* BROOM img */
+#broom {
+  width: 25%;
+  transform: rotate(33deg);
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: -85px;
 }
 
+/* Template */
 #mainslisttudents {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(325px, 1fr));
   grid-gap: 1em;
   padding-top: 10px;
 }
@@ -35,13 +57,14 @@ body {
   text-align: left;
   font-size: 12px;
   font-weight: 400;
-  padding: 0.5em;
-  /* position: relative; */
+  padding-left: 7.5em;
+  position: relative;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   margin: auto;
-  height: 250px;
-  width: 250px;
-  padding-top: 100px;
+  height: 220px;
+  width: 325px;
+  padding-top: 25px;
+  background-color: white;
 }
 
 .firstname,
@@ -52,17 +75,21 @@ body {
 }
 
 button {
-  background-color: red;
+  background-color: black;
   color: white;
   padding: 8px 10px;
   border: none;
   cursor: pointer;
-  width: 30%;
+  width: 100%;
   opacity: 0.8;
   position: absolute;
-  margin-left: 3px;
+  left: 0px;
 }
 
+button a {
+  border: 5px solid #d4b13b;
+  padding: 4px;
+}
 /* ////////  Modal ///////*/
 
 .modal-bg {
@@ -78,7 +105,7 @@ button {
 .modal-content {
   background-color: white;
   width: 80%;
-  height: 90%;
+  height: 85%;
   margin: auto;
   margin-top: 5%;
   overflow: scroll;
@@ -86,7 +113,7 @@ button {
   text-align: center;
 }
 
-/* /// The Close Button /// */
+/* /// Close Button /// */
 .close {
   color: #aaaaaa;
   float: right;
@@ -104,3 +131,38 @@ button {
 .hide {
   display: none;
 }
+
+/* Grid layout */
+
+#wrapper {
+  min-height: 100vh;
+  display: grid;
+  grid-template: 1em 1em 1em;
+  grid-template-areas:
+    "header header header"
+    "title title title"
+    "broom broom broom"
+    "main main main";
+  /* "footer footer footer"; */
+}
+
+header {
+  grid-area: header;
+}
+
+#title {
+  grid-area: title;
+}
+
+#broom {
+  grid-area: broom;
+}
+
+main {
+  grid-area: main;
+}
+
+/* footer {
+  grid-area: footer;
+  background-color: lightblue;
+} */
