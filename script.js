@@ -140,38 +140,38 @@ function showDetails(name, house) {
   if (house == gryff) {
     article.style.backgroundColor = "red";
     article.style.color = "#fff";
-    article.querySelector(".gryffimg").src =
-      "https://vignette.wikia.nocookie.net/harrypotter/images/b/b1/Gryffindor_ClearBG.png/revision/latest/scale-to-width-down/700?cb=20190222162949";
-  } else {
-    article.querySelector(".gryffimg").style.display = "none";
-  }
+    // article.querySelector(".gryffimg").src =
+    //   "https://vignette.wikia.nocookie.net/harrypotter/images/b/b1/Gryffindor_ClearBG.png/revision/latest/scale-to-width-down/700?cb=20190222162949";
+  } //  else {
+  //   article.querySelector(".gryffimg").style.display = "none";
+  // }
 
   if (house == huffle) {
     article.style.backgroundColor = "orange";
     article.style.color = "#fff";
-    article.querySelector(".huffleimg").src =
-      "https://vignette.wikia.nocookie.net/harrypotter/images/0/06/Hufflepuff_ClearBG.png/revision/latest?cb=20161020182518";
-  } else {
-    article.querySelector(".huffleimg").style.display = "none";
-  }
+    // article.querySelector(".huffleimg").src =
+    //   "https://vignette.wikia.nocookie.net/harrypotter/images/0/06/Hufflepuff_ClearBG.png/revision/latest?cb=20161020182518";
+  } // else {
+  //   article.querySelector(".huffleimg").style.display = "none";
+  // }
 
   if (house == slyth) {
     article.style.backgroundColor = "green";
     article.style.color = "#fff";
-    article.querySelector(".slythimg").src =
-      "https://vignette.wikia.nocookie.net/harrypotter/images/0/00/Slytherin_ClearBG.png/revision/latest/scale-to-width-down/700?cb=20161020182557";
-  } else {
-    article.querySelector(".slythimg").style.display = "none";
-  }
+    // article.querySelector(".slythimg").src =
+    //   "https://vignette.wikia.nocookie.net/harrypotter/images/0/00/Slytherin_ClearBG.png/revision/latest/scale-to-width-down/700?cb=20161020182557";
+  } //  else {
+  //   article.querySelector(".slythimg").style.display = "none";
+  // }
 
   if (house == raven) {
     article.style.backgroundColor = "blue";
     article.style.color = "#fff";
-    article.querySelector(".ravenimg").src =
-      "https://vignette.wikia.nocookie.net/harrypotter/images/4/4e/RavenclawCrest.png/revision/latest/scale-to-width-down/700?cb=20161020182442";
-  } else {
-    article.querySelector(".ravenimg").style.display = "none";
-  }
+    //   article.querySelector(".ravenimg").src =
+    //     "https://vignette.wikia.nocookie.net/harrypotter/images/4/4e/RavenclawCrest.png/revision/latest/scale-to-width-down/700?cb=20161020182442";
+  } //  else {
+  //   article.querySelector(".ravenimg").style.display = "none";
+  // }
 }
 
 //Add global eventListeners
