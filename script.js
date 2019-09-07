@@ -97,12 +97,12 @@ function sortByData(event) {
   }
 }
 
-// Create a function for filter the houses
-function filterHouses(house) {
-  // // delete the previous list if any
-  main.innerHTML = "";
-  //Display the students list
-}
+// // Create a function for filter the houses
+// function filterHouses(house) {
+//   // // delete the previous list if any
+//   main.innerHTML = "";
+//   //Display the students list
+// }
 
 //Create a function to display the students
 function showData(student) {
