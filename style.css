@@ -11,12 +11,85 @@ header {
   background-color: black;
   opacity: 0.9;
   width: 100%;
-  height: 80px;
+  height: 60px;
 }
 #logo {
-  width: 8%;
+  width: 65px;
   margin-top: 10px;
   margin-left: 10px;
+  z-index: 20;
+}
+#logo:hover {
+  animation: shake 2.5s alternate forwards;
+  cursor: pointer;
+}
+
+@keyframes shake {
+  10%,
+  90% {
+    transform: translate3d(-1px, 0, 0);
+  }
+
+  20%,
+  80% {
+    transform: translate3d(2px, 0, 0);
+  }
+
+  30%,
+  50%,
+  70% {
+    transform: translate3d(-4px, 0, 0);
+  }
+
+  40%,
+  60% {
+    transform: translate3d(4px, 0, 0);
+  }
+}
+/* Navigation */
+ul {
+  display: flex;
+  justify-content: space-between;
+  list-style-type: none;
+  text-align: center;
+  transition: transform 0.5s ease-out;
+  margin-top: -43px;
+  float: right;
+  margin-right: 170px;
+  margin-left: 35px;
+}
+
+ul li a {
+  color: white;
+  line-height: 1px;
+  font-weight: bold;
+  font-size: 12px;
+  letter-spacing: 1px;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: all 0.5s ease;
+  padding-right: 20px;
+}
+/* Sort by */
+.dropdown {
+  float: right;
+  margin-right: 14px;
+  margin-top: -40.4px;
+  display: flex;
+  font-weight: bold;
+  color: white;
+  font-family: Helvetica, sans-serif;
+  font-size: 12px;
+  text-transform: uppercase;
+  z-index: 100;
+}
+#sort-by {
+  display: flex;
+  padding: 4px 5px;
+  cursor: pointer;
+  justify-content: space-between;
+  position: relative;
+  margin-top: -5px;
 }
 
 body {
@@ -35,6 +108,7 @@ body {
   font-size: 30px;
   font-family: "Pathway Gothic One", sans-serif;
 }
+
 /* BROOM img */
 #broom {
   width: 25%;
@@ -43,6 +117,47 @@ body {
   margin-left: auto;
   margin-right: auto;
   margin-top: -85px;
+}
+.glowing {
+  animation: glowing 0.5s infinite alternate;
+}
+@keyframes glowing {
+  to {
+    filter: drop-shadow(5px 5px 7px black);
+  }
+}
+
+#broom:hover {
+  cursor: pointer;
+}
+
+.fly {
+  animation-name: flyanim;
+  animation-iteration-count: infinite;
+  animation-duration: 5s;
+  animation-timing-function: cubic-bezier(0.5, 0.5, 0.5, 0.5);
+}
+
+@keyframes flyanim {
+  0% {
+    transform: translate(490px, 250px);
+  }
+
+  25% {
+    transform: translate(120px, 70px);
+  }
+
+  50% {
+    transform: translate(-500, 260px);
+  }
+
+  70% {
+    transform: translate(100, 300px);
+  }
+
+  100% {
+    transform: translate(690px, 173px) scale(1) rotate(360deg);
+  }
 }
 
 /* Template */
@@ -111,6 +226,13 @@ button a {
   overflow: scroll;
   padding: 1em;
   text-align: center;
+}
+/* img */
+.gryffimg,
+.huffleimg,
+.slythimg,
+.ravenimg {
+  width: 100px;
 }
 
 /* /// Close Button /// */
